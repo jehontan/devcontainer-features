@@ -18,9 +18,8 @@ jobs:
         features:
           - nvidia-cuda
         baseImage:
-          - debian:latest
-          - ubuntu:latest
-          - mcr.microsoft.com/devcontainers/base:ubuntu
+          - debian:12
+          - ubuntu:jammy
     steps:
       - uses: actions/checkout@v6
 

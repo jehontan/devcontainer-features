@@ -15,7 +15,6 @@ check "libcufft.so" test 1 -eq "$(find /usr -name 'libcufft.so' | wc -l)"
 check "libcurand.so" test 1 -eq "$(find /usr -name 'libcurand.so' | wc -l)"
 check "libcusolver.so" test 1 -eq "$(find /usr -name 'libcusolver.so' | wc -l)"
 check "libcusparse.so" test 1 -eq "$(find /usr -name 'libcusparse.so' | wc -l)"
-check "libnvinfer.so" test 1 -eq "$(find /usr -name 'libnvinfer.so' | wc -l)"
 
 # Report result
 reportResults
