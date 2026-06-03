@@ -16,8 +16,7 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
+          - nvidia-cuda
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -37,8 +36,7 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
+          - nvidia-cuda
     steps:
       - uses: actions/checkout@v6
 
