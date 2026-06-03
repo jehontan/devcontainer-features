@@ -54,7 +54,7 @@
         "13.2",
         "13.3"
       ],
-      "default": "12.5",
+      "default": "13.0",
       "description": "Version of CUDA to install"
     },
     "cudnnVersion": {
@@ -98,6 +98,7 @@
     "trtVersion": {
       "type": "string",
       "proposals": [
+        "automatic",
         "8.5.1.7",
         "8.5.2.2",
         "8.5.3.1",
@@ -151,7 +152,7 @@
         "11.0.0.114"
       ],
       "default": "automatic",
-      "description": "Version of cuDNN to install"
+      "description": "Version of TensorRT to install"
     }
   },
   "installsAfter": [

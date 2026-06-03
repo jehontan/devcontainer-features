@@ -13,6 +13,7 @@ INSTALL_NVTX=${INSTALLNVTX}
 INSTALL_TOOLKIT=${INSTALLTOOLKIT}
 CUDA_VERSION=${CUDAVERSION}
 CUDNN_VERSION=${CUDNNVERSION}
+TRT_VERSION=${TRTVERSION}
 
 . /etc/os-release 
 
@@ -154,12 +155,21 @@ if [ "$INSTALL_CUDNNDEV" = "true" ]; then
     apt-get install -yq "$cudnn_dev_pkg_version"
 fi
 
+# auto find recent TensorRT version
 major_trt_version=$(echo "${TRT_VERSION}" | cut -d '.' -f 1)
+if [ "$TRT_VERSION" = "automatic" ]; then
+    
+    if [[ "$CUDA_VERSION" < "12.9" ]]; then
+        trt_related_version=$(apt-cache policy libnvinfer10 | grep -E "[[:graph:]]+\+cuda[[:graph:]]+[[:blank:]]" | awk '{print $1}')
+    else
+        trt_related_version=$(apt-cache policy libnvinfer11 | grep -E "[[:graph:]]+\+cuda[[:graph:]]+[[:blank:]]" | awk '{print $1}')
+    fi
+else
+    trt_related_version="${TRT_VERSION}-1+cuda${CUDA_VERSION}"
+fi
 
 if [ "$INSTALL_TRT" = "true" ]; then
     # Ensure that the requested version of TensorRT is available AND compatible
-    trt_related_version="${TRT_VERSION}-1+cuda${CUDA_VERSION}"
-
     if ! apt-cache show "libnvinfer-bin=$trt_related_version"; then
         echo "The requested version of TensorRT is not available: TensorRT $TRT_VERSION for CUDA $CUDA_VERSION"
         exit 1
@@ -185,8 +195,6 @@ fi
 
 if [ "$INSTALL_TRTDEV" = "true" ]; then
     # Ensure that the requested version of TensorRT development package is available AND compatible
-    trt_related_version="${TRT_VERSION}-1+cuda${CUDA_VERSION}"
-
     if ! apt-cache show "libnvinfer-dev=$trt_related_version"; then
         echo "The requested version of TensorRT development libraries is not available: TensorRT $TRT_VERSION for CUDA $CUDA_VERSION"
         exit 1
