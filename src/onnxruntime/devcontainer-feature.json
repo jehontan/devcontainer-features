@@ -1,0 +1,32 @@
+{
+    "name": "onnxruntime",
+    "id": "onnxruntime",
+    "version": "0.1.0",
+    "description": "Installs onnxruntime",
+    "documentationURL": "https://github.com/jehontan/devcontainer-features/tree/main/src/onnxruntime",
+    "options": {
+        "installGpu": {
+            "type": "boolean",
+            "description": "Install GPU support for onnxruntime",
+            "default": false
+        },
+        "installCxx": {
+            "type": "boolean",
+            "description": "Also install the Cxx libraries",
+            "default": false
+        },
+        "ortVersion": {
+            "type": "string",
+            "description": "Onnxruntime version",
+            "default": "1.26.0",
+            "proposals": [
+                "1.26.0",
+                "1.25.1",
+                "1.25.0"
+            ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
