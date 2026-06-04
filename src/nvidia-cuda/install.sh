@@ -178,19 +178,19 @@ if [ "$INSTALL_TRT" = "true" ]; then
     echo "Installing TensorRT libraries..."
 
     apt-get install -yq \
-        libnvinfer-bin=${version} \
-        libnvinfer-dispatch${major_trt_version}=${version} \
-        libnvinfer-lean${major_trt_version}=${version} \
-        libnvinfer-plugin${major_trt_version}=${version} \
-        libnvinfer-vc-plugin${major_trt_version}=${version} \
-        libnvinfer-win-builder-resource${major_trt_version}=${version} \
-        libnvinfer11=${version} \
-        libnvonnxparsers${major_trt_version}=${version} \
-        python3-libnvinfer-dispatch=${version} \
-        python3-libnvinfer-lean=${version} \
-        python3-libnvinfer=${version} \
-        tensorrt-libs=${version} \
-        tensorrt=${version}
+        libnvinfer-bin=${trt_related_version} \
+        libnvinfer-dispatch${major_trt_version}=${trt_related_version} \
+        libnvinfer-lean${major_trt_version}=${trt_related_version} \
+        libnvinfer-plugin${major_trt_version}=${trt_related_version} \
+        libnvinfer-vc-plugin${major_trt_version}=${trt_related_version} \
+        libnvinfer-win-builder-resource${major_trt_version}=${trt_related_version} \
+        libnvinfer11=${trt_related_version} \
+        libnvonnxparsers${major_trt_version}=${trt_related_version} \
+        python3-libnvinfer-dispatch=${trt_related_version} \
+        python3-libnvinfer-lean=${trt_related_version} \
+        python3-libnvinfer=${trt_related_version} \
+        tensorrt-libs=${trt_related_version} \
+        tensorrt=${trt_related_version}
 fi
 
 if [ "$INSTALL_TRTDEV" = "true" ]; then
@@ -203,18 +203,18 @@ if [ "$INSTALL_TRTDEV" = "true" ]; then
     echo "Installing TensorRT development libraries..."
 
     apt-get install -yq \
-        libnvinfer-dev=${version} \
-        libnvinfer-dispatch-dev=${version} \
-        libnvinfer-headers-dev=${version} \
-        libnvinfer-headers-plugin-dev=${version} \
-        libnvinfer-headers-python-plugin-dev=${version} \
-        libnvinfer-lean-dev=${version} \
-        libnvinfer-plugin-dev=${version} \
-        libnvinfer-safe-headers-dev=${version} \
-        libnvinfer-vc-plugin-dev=${version} \
-        libnvonnxparsers-dev=${version} \
-        python3-libnvinfer-dev=${version} \
-        tensorrt-dev=${version}
+        libnvinfer-dev=${trt_related_version} \
+        libnvinfer-dispatch-dev=${trt_related_version} \
+        libnvinfer-headers-dev=${trt_related_version} \
+        libnvinfer-headers-plugin-dev=${trt_related_version} \
+        libnvinfer-headers-python-plugin-dev=${trt_related_version} \
+        libnvinfer-lean-dev=${trt_related_version} \
+        libnvinfer-plugin-dev=${trt_related_version} \
+        libnvinfer-safe-headers-dev=${trt_related_version} \
+        libnvinfer-vc-plugin-dev=${trt_related_version} \
+        libnvonnxparsers-dev=${trt_related_version} \
+        python3-libnvinfer-dev=${trt_related_version} \
+        tensorrt-dev=${trt_related_version}
 fi
 
 if [ "$INSTALL_NVTX" = "true" ]; then
