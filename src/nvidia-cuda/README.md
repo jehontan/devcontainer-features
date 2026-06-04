@@ -18,7 +18,6 @@ Installs shared libraries for NVIDIA CUDA.
 | installCudnn | Additionally install CUDA Deep Neural Network (cuDNN) shared library | boolean | false |
 | installCudnnDev | Additionally install CUDA Deep Neural Network (cuDNN) development libraries and headers | boolean | false |
 | installTrt | Additionally install TensorRT | boolean | false |
-| installTrtDev | Additionally install TensorRT development libraries and headers | boolean | false |
 | installNvtx | Additionally install NVIDIA Tools Extension (NVTX) | boolean | false |
 | installToolkit | Additionally install NVIDIA CUDA Toolkit | boolean | false |
 | cudaVersion | Version of CUDA to install | string | 13.0 |
