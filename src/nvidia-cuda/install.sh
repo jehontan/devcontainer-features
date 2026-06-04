@@ -217,6 +217,13 @@ if [ "$INSTALL_TOOLKIT" = "true" ]; then
     apt-get install -yq "$toolkit_pkg"
 fi
 
+# add CUDA to PATH
+cat << EOF > /etc/profile.d/00-cuda-path.sh
+export CUDA_HOME=/usr/local/cuda
+export PATH=/usr/local/cuda/bin:${PATH}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
+EOF
+
 # Clean up
 rm -rf /var/lib/apt/lists/*
 
