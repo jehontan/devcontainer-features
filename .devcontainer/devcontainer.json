@@ -18,8 +18,9 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+        "ghcr.io/devcontainers/features/docker-in-docker:latest": {}
     },
     "remoteUser": "node",
-    "updateContentCommand": "npm install -g @devcontainers/cli"
+    "updateContentCommand": "npm install -g @devcontainers/cli",
+    "postCreateCommand": "sudo chown $(whoami) /var/run/docker.sock"
 }

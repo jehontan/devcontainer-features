@@ -20,11 +20,6 @@
       "default": false,
       "description": "Additionally install TensorRT"
     },
-    "installTrtDev": {
-      "type": "boolean",
-      "default": false,
-      "description": "Additionally install TensorRT development libraries and headers"
-    },
     "installNvtx": {
       "type": "boolean",
       "default": false,
