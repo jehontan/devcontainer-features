@@ -1,7 +1,7 @@
 {
     "name": "onnxruntime",
     "id": "onnxruntime",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Installs onnxruntime",
     "documentationURL": "https://github.com/jehontan/devcontainer-features/tree/main/src/onnxruntime",
     "options": {

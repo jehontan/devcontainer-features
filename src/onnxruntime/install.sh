@@ -85,4 +85,6 @@ else
     fi
 fi
 
+ln -s "/usr/local/${ORT_PACKAGE_NAME}" /usr/local/onnxruntime
+
 echo "Done!"
