@@ -85,6 +85,6 @@ else
     fi
 fi
 
-ln -s "/usr/local/${ORT_PACKAGE_NAME}" /usr/local/onnxruntime
+ln -s "/usr/local/$(ls /usr/local | grep onnxruntime)" /usr/local/onnxruntime
 
 echo "Done!"
