@@ -87,4 +87,6 @@ fi
 
 ln -s "/usr/local/$(ls /usr/local | grep onnxruntime)" /usr/local/onnxruntime
 
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/onnxruntime/lib' >> ~/.bashrc
+
 echo "Done!"
